@@ -1,3 +1,220 @@
-.hide {
-  display: none;
+/* =========================================
+   1. VARIABLES & CONFIGURATION
+   ========================================= */
+   :root {
+    --primary-color: #2ecc71;  /* Vert "Hacker" */
+    --secondary-color: #3498db; /* Bleu "Futur" */
+    --accent-color: #e74c3c;    /* Rouge "Alerte" */
+    --bg-color: #202028;        /* Fond gris foncé */
+    --text-color: #ffffff;
+    --pixel-border: 4px solid #fff;
+}
+
+/* Import propre si tu ne l'as pas mis dans le HTML, 
+   sinon tu peux supprimer ces lignes @import */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sixtyfour&display=swap');
+
+/* =========================================
+   2. STYLE GÉNÉRAL DU CORPS (BODY)
+   ========================================= */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Press Start 2P', cursive; /* Police par défaut */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    
+    /* Motif de fond style grille rétro */
+    background-image: 
+        radial-gradient(#30303a 15%, transparent 16%), 
+        radial-gradient(#30303a 15%, transparent 16%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    overflow-x: hidden; /* Évite les scrollbars horizontales */
+}
+
+h1, h2 {
+    text-align: center;
+    color: var(--primary-color);
+    text-shadow: 4px 4px 0px #000;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+/* =========================================
+   3. CONTENEUR DE JEU & TRANSITIONS DE PAGES
+   ========================================= */
+#game {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.85); /* Fond semi-transparent */
+    padding: 30px;
+    border: var(--pixel-border);
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
+    min-height: 600px;
+    position: relative;
+}
+
+/* --- LE SYSTÈME DE TRANSITION --- */
+/* Chaque niveau doit avoir la classe "screen" */
+.screen {
+    display: none;       /* Caché par défaut */
+    opacity: 0;          /* Invisible */
+    transform: translateY(20px); /* Légèrement décalé vers le bas */
+    
+    /* La transition magique : opacité et mouvement */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* La classe ajoutée via JS pour afficher l'écran */
+.screen.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* =========================================
+   4. ÉLÉMENTS D'INTERFACE (UI)
+   ========================================= */
+
+/* --- BOITES DE DIALOGUE --- */
+.dialogue {
+    background-color: #333;
+    border: 2px solid var(--secondary-color);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    font-size: 12px; /* Un peu petit pour le pixel art */
+    box-shadow: 0 5px 0 rgba(0,0,0,0.3);
+    position: relative;
+}
+
+/* Noms des personnages */
+.habitant { color: var(--primary-color); font-weight: bold; display: block; margin-bottom: 5px; }
+.systeme { color: var(--accent-color); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 5px; }
+
+/* --- BOUTONS (Effet Arcade) --- */
+button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 15px 20px;
+    margin: 10px 0;
+    width: 100%;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center; /* Centré pour le style menu */
+    position: relative;
+    top: 0;
+
+    /* Transition fluide sur TOUT */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    color: #000;
+    top: -4px; /* Le bouton monte physiquement */
+    box-shadow: 0 6px 0 #fff; /* Ombre dure */
+}
+
+button:active {
+    top: 0; /* Le bouton s'enfonce */
+    box-shadow: 0 0 0 #fff;
+    background-color: var(--primary-color);
+}
+
+/* =========================================
+   5. COMPOSANTS SPÉCIFIQUES (Niveaux)
+   ========================================= */
+
+/* --- QCM (Questions) --- */
+.qcm div {
+    margin-bottom: 30px;
+    border-bottom: 1px dashed #555;
+    padding-bottom: 20px;
+}
+
+/* --- GRILLE DE COMPOSANTS (Niveau Assemblage) --- */
+.composant { /* Le conteneur grille */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.composant p, .composant-card {
+    background: #151515;
+    border: 1px solid #555;
+    padding: 15px;
+    font-size: 10px;
+    line-height: 1.4;
+    cursor: help;
+    
+    /* Transition pour le zoom */
+    transition: transform 0.3s ease, border-color 0.3s, box-shadow 0.3s;
+}
+
+.composant p:hover, .composant-card:hover {
+    transform: scale(1.05) rotate(1deg); /* Léger zoom et rotation */
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+    z-index: 10;
+}
+
+/* --- ZONE POUBELLE / DÉCHETS --- */
+#trash {
+    height: 120px;
+    border: 4px dashed #7f8c8d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #aaa;
+    font-size: 10px;
+    transition: background-color 0.3s;
+}
+
+#trash:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* --- SCORE BOARD --- */
+.score-board {
+    font-family: 'Sixtyfour', sans-serif; /* Police spéciale chiffres */
+    font-size: 18px;
+    text-align: right;
+    color: var(--accent-color);
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #333;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   6. ANIMATIONS CLÉS (Keyframes)
+   ========================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation de clignotement pour les alertes */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.alert {
+    animation: blink 1s infinite;
+    color: var(--accent-color);
 }
