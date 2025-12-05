@@ -336,3 +336,31 @@ form {
   height: 45px;
   object-fit: contain;
 }
+#btnDecathlon,
+.decathlon-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 18px;
+  background: #00ff66;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid #006622;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+#btnDecathlon:hover,
+.decathlon-link:hover {
+  background: #55ff99;
+  transform: scale(1.07);
+  box-shadow: 0 0 10px #55ff99;
+}
+
+#btnDecathlon:active,
+.decathlon-link:active {
+  transform: scale(0.95);
+  background: #00cc55;
+}
