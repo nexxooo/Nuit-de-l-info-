@@ -1,5 +1,5 @@
 // Liste des phases dans l'ordre
-const phases = ["intro", "step1", "level1", "qcm2","level2", "level3"];
+const phases = ["intro", "step1", "level1", "qcm2", "level2", "level3"];
 let currentPhase = 0;
 
 // Sélectionne tous les boutons "fleche-btn"
@@ -21,7 +21,6 @@ document.querySelectorAll(".fleche-btn").forEach((btn) => {
 
       const btnEtape1 = document.querySelectorAll(".q1");
       // .querySelectorAll("button");
-      console.log(btnEtape1);
       const btnEtape2 = document.querySelectorAll(".q2");
 
       for (let i = 0; i < btnEtape1.length; i++) {
@@ -49,3 +48,33 @@ document.querySelectorAll(".fleche-btn").forEach((btn) => {
     }
   });
 });
+
+const btnsTrash = document.querySelectorAll("mainBtn"); // bouton principal du clicker
+
+const upgradeBtn = document.getElementById("upgradeBtn"); // bouton d'amélioration
+const userScoreElement = document.getElementById("score1");
+
+let scoreClicker = +localStorage.getItem("scoreClicker"); //score de l'utilisateur
+
+if (!scoreClicker) {
+  // si le score n'a jamais etais crée on l'initialise
+  scoreClicker = 0;
+  localStorage.setItem("scoreClicker", scoreClicker);
+}
+
+userScoreElement.textContent = scoreClicker; // affichage du score dès le chargement de la page
+for (let i = 0; i < btnsTrash.length; i++) {
+  const btnTrash = btnsTrash[i];
+  btnTrash.addEventListener("click", click);
+}
+
+function click() {
+  // detection du clique sur le bouton principale
+  scoreClicker += 1; //incrementation du score
+  userScoreElement.textContent = scoreClicker; //affichage du score
+  save();
+  console.log(scoreClicker);
+}
+function save() {
+  localStorage.setItem("scoreClicker", scoreClicker);
+}
