@@ -2,6 +2,7 @@
 const phases = ["intro", "step1", "level1", "qcm2", "level2", "level3"];
 let currentPhase = 0;
 
+
 // Sélectionne tous les boutons "fleche-btn"
 document.querySelectorAll(".fleche-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -49,25 +50,47 @@ document.querySelectorAll(".fleche-btn").forEach((btn) => {
   });
 });
 
-const btnsTrash1 = document.getElementById("btnTrash1"); // bouton principal du clicker
-const btnsTrash2 = document.getElementById("btnTrash2"); // bouton principal du clicker
-const btnsTrash3 = document.getElementById("btnTrash3"); // bouton principal du clicker
+const btnsTrash = document.querySelectorAll("mainBtn"); // bouton principal du clicker
 
 const upgradeBtn = document.getElementById("upgradeBtn"); // bouton d'amélioration
 const userScoreElement = document.getElementById("score1");
 
-let scoreClicker = 0; //score de l'utilisateur
+let scoreClicker = +localStorage.getItem("scoreClicker"); //score de l'utilisateur
+
+if (!scoreClicker) {
+  // si le score n'a jamais etais crée on l'initialise
+  scoreClicker = 0;
+  localStorage.setItem("scoreClicker", scoreClicker);
+}
 
 userScoreElement.textContent = scoreClicker; // affichage du score dès le chargement de la page
-
-btnsTrash1.addEventListener("click", click);
-btnsTrash2.addEventListener("click", click);
-btnsTrash3.addEventListener("click", click);
+for (let i = 0; i < btnsTrash.length; i++) {
+  const btnTrash = btnsTrash[i];
+  btnTrash.addEventListener("click", click);
+}
 
 function click() {
-  if (scoreClicker < 10) {
-    // detection du clique sur le bouton principale
-    scoreClicker += 1; //incrementation du score
-    userScoreElement.textContent = scoreClicker; //affichage du score
-  }
+  // detection du clique sur le bouton principale
+  scoreClicker += 1; //incrementation du score
+  userScoreElement.textContent = scoreClicker; //affichage du score
+  save();
+  console.log(scoreClicker);
+}
+function save() {
+  localStorage.setItem("scoreClicker", scoreClicker);
+}
+const componentItems = document.querySelectorAll(".component-item");
+const pcCase = document.getElementById("pc-case");
+
+if (componentItems && pcCase) {
+  componentItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const clone = item.cloneNode(true);
+      clone.classList.remove("component-item");
+      clone.style.cursor = "default";
+      clone.style.borderColor = "#0f0";
+
+      pcCase.appendChild(clone);
+    });
+  });
 }
