@@ -82,3 +82,32 @@ button.active {
   background-color: #a0a840;
   color: #111; /* texte noir sur bouton vert */
 }
+
+.btnTrash {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: transparent;
+  border: 0px;
+}
+#btnTrash1 {
+  top: 221px;
+  left: 172px;
+  width: 135px;
+  border-radius: 20px;
+}
+
+#btnTrash2 {
+  top: 219px;
+  left: 416px;
+  width: 136px;
+  border-radius: 20px;
+}
+
+#btnTrash3 {
+  top: 238px;
+  left: 538px;
+  width: 188px;
+  height: 171px;
+  border-radius: 20px;
+}

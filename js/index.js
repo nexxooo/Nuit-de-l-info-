@@ -49,32 +49,25 @@ document.querySelectorAll(".fleche-btn").forEach((btn) => {
   });
 });
 
-const btnsTrash = document.querySelectorAll("mainBtn"); // bouton principal du clicker
+const btnsTrash1 = document.getElementById("btnTrash1"); // bouton principal du clicker
+const btnsTrash2 = document.getElementById("btnTrash2"); // bouton principal du clicker
+const btnsTrash3 = document.getElementById("btnTrash3"); // bouton principal du clicker
 
 const upgradeBtn = document.getElementById("upgradeBtn"); // bouton d'amélioration
 const userScoreElement = document.getElementById("score1");
 
-let scoreClicker = +localStorage.getItem("scoreClicker"); //score de l'utilisateur
-
-if (!scoreClicker) {
-  // si le score n'a jamais etais crée on l'initialise
-  scoreClicker = 0;
-  localStorage.setItem("scoreClicker", scoreClicker);
-}
+let scoreClicker = 0; //score de l'utilisateur
 
 userScoreElement.textContent = scoreClicker; // affichage du score dès le chargement de la page
-for (let i = 0; i < btnsTrash.length; i++) {
-  const btnTrash = btnsTrash[i];
-  btnTrash.addEventListener("click", click);
-}
+
+btnsTrash1.addEventListener("click", click);
+btnsTrash2.addEventListener("click", click);
+btnsTrash3.addEventListener("click", click);
 
 function click() {
-  // detection du clique sur le bouton principale
-  scoreClicker += 1; //incrementation du score
-  userScoreElement.textContent = scoreClicker; //affichage du score
-  save();
-  console.log(scoreClicker);
-}
-function save() {
-  localStorage.setItem("scoreClicker", scoreClicker);
+  if (scoreClicker < 10) {
+    // detection du clique sur le bouton principale
+    scoreClicker += 1; //incrementation du score
+    userScoreElement.textContent = scoreClicker; //affichage du score
+  }
 }
