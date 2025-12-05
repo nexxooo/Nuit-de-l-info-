@@ -3,7 +3,7 @@ html,
 body {
   height: 100%;
   margin: 0;
-  overflow: hidden; /* empêche le scroll */
+  /* overflow: hidden; empêche le scroll */
   color: white;
 }
 
@@ -68,7 +68,8 @@ h1 {
 }
 
 /* BOUTON STYLE GAME BOY */
-#mainBtn {
+#mainBtn,
+button {
   font-family: "Press Start 2P", system-ui;
   font-size: 3rem;
   padding: 2rem 3rem;
@@ -80,6 +81,10 @@ h1 {
 
   box-shadow: 0 10px #405010;
   transition: transform 0.1s;
+}
+
+button {
+  width: 100%;
 }
 
 a {
