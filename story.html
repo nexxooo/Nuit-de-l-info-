@@ -151,57 +151,71 @@
           L’ORDINATEUR ULTIME 3000.
         </div>
         <button type="button">Start</button>
-        <div class="composant">
-          <p>Carte Mère : C’est le cerveau central de l’ordinateur.</p>
-          <p>Processeur : Il exécute toutes les instructions de ton ordinateur.</p>
-          <p>Mémoire Vive : Plus tu as de RAM, plus l’ordi peut faire plusieurs choses en même temps.</p>
-          <p>Disque Dur : C’est là que sont stockés les fichiers, jeux, systèmes,photos…</p>
-          <p>Carte Graphique : Elle gère l’affichage et les jeux vidéo.</p>
-          <p>Alimentation : Elle fournit de l’électricité à tous les composants.</p>
-          <p>Système de refroidissement : Refroidit le processeur pour éviterqu’il fonde.</p>
-          <p>Boîtier : La “maison” de l’ordinateur.</p>
-          <p>Carte Réseaux : Permet de se connecter à Internet.</p>
-          <p>Carte Son : Gère l’audio.</p>
+        <div id="assembly-zone">
+          <!-- Colonne de gauche : composants à choisir -->
+          <div id="components">
+            <h3>Composants disponibles</h3>
+        
+            <div class="component-item" data-name="Carte Mère">
+              <img src="./Assets/etape2cartemere.png" class="component-img" alt="Carte mère" />
+              <p>Carte Mère : C’est le cerveau central de l’ordinateur.</p>
+            </div>
+        
+            <div class="component-item" data-name="Processeur">
+              <img src="./Assets/etape2pcu.png" class="component-img" alt="Processeur" />
+              <p>Processeur : Il exécute toutes les instructions de ton ordinateur.</p>
+            </div>
+        
+            <div class="component-item" data-name="Mémoire Vive">
+              <img src="./Assets/etape2mmv.png class="component-img" alt="Mémoire Vive" />
+              <p>Mémoire Vive : Plus tu as de RAM, plus l’ordi peut faire plusieurs choses en même temps.</p>
+            </div>
+        
+            <div class="component-item" data-name="Disque Dur">
+              <img src="./Assets/etape2disqued.png" class="component-img" alt="Disque Dur" />
+              <p>Disque Dur : C’est là que sont stockés les fichiers, jeux, systèmes, photos…</p>
+            </div>
+        
+            <div class="component-item" data-name="Carte Graphique">
+              <img src="./Assets/etape2carteg.png" class="component-img" alt="Carte Graphique" />
+              <p>Carte Graphique : Elle gère l’affichage et les jeux vidéo.</p>
+            </div>
+        
+            <div class="component-item" data-name="Alimentation">
+              <img src="./Assets/etape2alimentation.png" class="component-img" alt="Alimentation" />
+              <p>Alimentation : Elle fournit de l’électricité à tous les composants.</p>
+            </div>
+        
+            <div class="component-item" data-name="Système de refroidissement">
+              <img src="./Assets/etape2rs.png" class="component-img" alt="Système de refroidissement" />
+              <p>Système de refroidissement : Refroidit le processeur pour éviter qu’il fonde.</p>
+            </div>
+        
+            <div class="component-item" data-name="Boîtier">
+              <img src="./Assets/etape2boitier.png" class="component-img" alt="Boîtier" />
+              <p>Boîtier : La “maison” de l’ordinateur.</p>
+            </div>
+        
+            <div class="component-item" data-name="Carte Réseaux">
+              <img src="./Assets/etape2cr.png" class="component-img" alt="Carte Réseaux" />
+              <p>Carte Réseaux : Permet de se connecter à Internet.</p>
+            </div>
+        
+            <div class="component-item" data-name="Carte Son">
+              <img src="./Assets/etape2rs.png" class="component-img" alt="Carte Son" />
+              <p>Carte Son : Gère l’audio.</p>
+            </div>
+          </div>
+        
+          <!-- Zone centrale : l’ordinateur -->
+          <div id="pc-drop-zone">
+            <h3>Ton ordinateur</h3>
+            <div id="pc-case">
+              Clique sur un composant pour l'ajouter ici 🖥️
+            </div>
+          </div>
         </div>
-        <div class="dialogue">
-          <span class="habitant">Coach :</span>
-          FÉLICITATIONS HÉROS ! Tu viens de créer le PixelPC V1 !
-        </div>
-        <div class="score-board">Score : <span id="score2">0</span>/10</div>
-        <button type="button" class="fleche-btn">
-          Passer à la phase suivante ➜
-        </button>
-      </div>
-
-      <!-- ETAPE 4 : VISUALISATION -->
-      <div id="level3">
-        <h2>Etape 4 : Visualisation</h2>
-        <div class="dialogue">
-          <span class="habitant">Habitant :</span>
-          Wouaaah ! Un PC qui ne coûte pas un bras ! Tu es officiellement
-          meilleur que GAFAM. Est ce qu'il s'allume ?
-        </div>
-        <div class="dialogue">
-          <span class="habitant">Coach NIRD :</span>
-          "L'attaque virale arrive via le réseau. Visualise la posture idéale
-          pour tenir le coup face au stress !"
-        </div>
-        <div class="dialogue">
-          <span class="systeme">Système de Sécurité :</span>
-          ALERTE ! Publicités BigTechos détectées ! Cliquez dessus pour les
-          fermer avant saturation !
-        </div>
-        <div class="dialogue">
-          <span class="systeme">Système de Sécurité :</span>
-          ALERTE CRITIQUE ÉVITÉE !
-        </div>
-        <div class="dialogue">
-          <span class="habitant">Coach :</span>
-          Bravo tu as réussi ! Mais tu pourrais être plus fort, regarde les
-          liens.
-        </div>
-        <div class="score-board">Score : <span id="score3">0</span>/10</div>
-      </div>
+        
     </div>
 
     <script src="./js/index.js"></script>
