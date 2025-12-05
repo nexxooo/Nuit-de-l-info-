@@ -16,6 +16,7 @@
       /* Masque toutes les étapes sauf intro */
       #step1,
       #level1,
+      #qcm2,
       #level2,
       #level3 {
         display: none;
@@ -83,16 +84,24 @@
         </button>
       </div>
 
-      <!-- ETAPE 2 : RÉCUPÉRATION -->
       <div id="level1">
         <h2>Etape 2 : Récupération</h2>
         <div class="dialogue">
           <span class="habitant">Habitant :</span>
-          Vite ! La décharge est pleine de composants utilisables. Clique pour
-          en sauver le plus possible avant que le camion poubelle ne passe !
+          Vite ! La décharge est pleine de composants utilisables...
         </div>
         <div class="score-board">Score : <span id="score1">0</span>/10</div>
-        <div id="trash">ZONE DE DÉCHETS</div>
+        <div id="trash">
+          <img src="./Assets/etape1.png" class="trash-img" alt="Déchet informatique" />
+          <p>ZONE DE DÉCHETS</p>
+        </div>
+        <button type="button" class="fleche-btn">
+          Passer à la phase suivante ➜
+        </button>
+      </div>
+
+
+      <div id="qcm2">
         <div class="qcm">
           <div class="q2">
             <p>

@@ -1,5 +1,5 @@
 // Liste des phases dans l'ordre
-const phases = ["intro", "step1", "level1", "level2", "level3"];
+const phases = ["intro", "step1", "level1", "qcm2","level2", "level3"];
 let currentPhase = 0;
 
 // Sélectionne tous les boutons "fleche-btn"

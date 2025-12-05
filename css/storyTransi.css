@@ -203,3 +203,23 @@ h2 {
 form {
   margin: 0; /* Évite les marges par défaut qui décalent le bouton */
 }
+
+#trash {
+  width: auto;
+  height: fit-content;
+  border: 2px dashed #666;
+  background: #222;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.trash-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  cursor: pointer; /* Si tu veux cliquer dessus */
+}
