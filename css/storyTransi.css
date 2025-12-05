@@ -301,3 +301,38 @@ form {
   color: #888;
   font-size: 12px;
 }
+.component-img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.component-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a1a1a;
+  border: 1px solid #444;
+  padding: 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.component-item:hover {
+  transform: translateX(4px);
+  border-color: #0f0;
+}
+
+#assembly-zone {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+#pc-case img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}

@@ -71,3 +71,16 @@ function click() {
     userScoreElement.textContent = scoreClicker; //affichage du score
   }
 }
+
+const componentItems = document.querySelectorAll(".component-item");
+const pcCase = document.getElementById("pc-case");
+
+componentItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const clone = item.cloneNode(true);
+    clone.classList.remove("component-item");
+    clone.style.cursor = "default";
+    clone.style.borderColor = "#0f0";
+    pcCase.appendChild(clone);
+  });
+});

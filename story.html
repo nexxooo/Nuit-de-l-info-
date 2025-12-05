@@ -93,7 +93,7 @@
         <div class="score-board">Score : <span id="score1">0</span>/10</div>
         <div id="trash">
           <img
-            src="./Assets/etape1.png"
+            src="./img/etape1.png"
             class="trash-img"
             alt="Déchet informatique"
           />
@@ -156,31 +156,70 @@
           L’ORDINATEUR ULTIME 3000.
         </div>
         <button type="button">Start</button>
-        <div class="composant">
-          <p>Carte Mère : C’est le cerveau central de l’ordinateur.</p>
-          <p>
-            Processeur : Il exécute toutes les instructions de ton ordinateur.
-          </p>
-          <p>
-            Mémoire Vive : Plus tu as de RAM, plus l’ordi peut faire plusieurs
-            choses en même temps.
-          </p>
-          <p>
-            Disque Dur : C’est là que sont stockés les fichiers, jeux,
-            systèmes,photos…
-          </p>
-          <p>Carte Graphique : Elle gère l’affichage et les jeux vidéo.</p>
-          <p>
-            Alimentation : Elle fournit de l’électricité à tous les composants.
-          </p>
-          <p>
-            Système de refroidissement : Refroidit le processeur pour
-            éviterqu’il fonde.
-          </p>
-          <p>Boîtier : La “maison” de l’ordinateur.</p>
-          <p>Carte Réseaux : Permet de se connecter à Internet.</p>
-          <p>Carte Son : Gère l’audio.</p>
+        <div id="assembly-zone">
+          <div id="components">
+            <h3>Composants disponibles</h3>
+        
+            <div class="component-item" data-name="Carte Mère">
+              <img src="./img/etape2cartemere.png" class="component-img" alt="Carte Mère" />
+              <p>Carte Mère : C’est le cerveau central de l’ordinateur.</p>
+            </div>
+        
+            <div class="component-item" data-name="Processeur">
+              <img src="./img/etape2pcu.png" class="component-img" alt="Processeur" />
+              <p>Processeur : Il exécute toutes les instructions de ton ordinateur.</p>
+            </div>
+        
+            <div class="component-item" data-name="Mémoire Vive">
+              <img src="./img/etape2mmv.png" class="component-img" alt="Mémoire Vive" />
+              <p>Mémoire Vive : La RAM permet de faire plusieurs choses en même temps.</p>
+            </div>
+        
+            <div class="component-item" data-name="Disque Dur">
+              <img src="./img/etape2disqued.png" class="component-img" alt="Disque Dur" />
+              <p>Disque Dur : Stocke les fichiers, jeux, photos et systèmes.</p>
+            </div>
+        
+            <div class="component-item" data-name="Carte Graphique">
+              <img src="./img/etape2carteg.png" class="component-img" alt="Carte Graphique" />
+              <p>Carte Graphique : Gère l’affichage et les jeux vidéo.</p>
+            </div>
+        
+            <div class="component-item" data-name="Alimentation">
+              <img src="./img/etape2alimentation.png" class="component-img" alt="Alimentation" />
+              <p>Alimentation : Fournit de l’électricité à tous les composants.</p>
+            </div>
+        
+            <div class="component-item" data-name="Refroidissement">
+              <img src="./img/etape2cr.png" class="component-img" alt="Refroidissement" />
+              <p>Système de refroidissement : Empêche le processeur de surchauffer.</p>
+            </div>
+        
+            <div class="component-item" data-name="Boîtier">
+              <img src="./img/etape2boitier.png" class="component-img" alt="Boîtier" />
+              <p>Boîtier : La “maison” de l’ordinateur.</p>
+            </div>
+        
+            <div class="component-item" data-name="Carte Réseau">
+              <img src="./img/etape2cr.png" class="component-img" alt="Carte Réseau" />
+              <p>Carte Réseau : Permet de se connecter à Internet.</p>
+            </div>
+        
+            <div class="component-item" data-name="Carte Son">
+              <img src="./img/etape2rs.png" class="component-img" alt="Carte Son" />
+              <p>Carte Son : Gère l’audio.</p>
+            </div>
+          </div>
+        
+          <div id="pc-drop-zone">
+            <h3>Ton ordinateur</h3>
+            <div id="pc-case">
+              Clique sur un composant pour l’ajouter ici 🖥️
+            </div>
+          </div>
         </div>
+        
+  
         <div class="dialogue">
           <span class="habitant">Coach :</span>
           FÉLICITATIONS HÉROS ! Tu viens de créer le PixelPC V1 !
