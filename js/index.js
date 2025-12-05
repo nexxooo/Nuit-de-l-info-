@@ -2,6 +2,7 @@
 const phases = ["intro", "step1", "level1", "qcm2", "level2", "level3"];
 let currentPhase = 0;
 
+
 // Sélectionne tous les boutons "fleche-btn"
 document.querySelectorAll(".fleche-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -49,6 +50,7 @@ document.querySelectorAll(".fleche-btn").forEach((btn) => {
   });
 });
 
+<<<<<<< HEAD
 const btnsTrash = document.querySelectorAll("mainBtn"); // bouton principal du clicker
 
 const upgradeBtn = document.getElementById("upgradeBtn"); // bouton d'amélioration
@@ -78,3 +80,5 @@ function click() {
 function save() {
   localStorage.setItem("scoreClicker", scoreClicker);
 }
+=======
+>>>>>>> 80a2005 (FINI)

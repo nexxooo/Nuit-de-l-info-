@@ -223,3 +223,14 @@ form {
   margin-bottom: 10px;
   cursor: pointer; /* Si tu veux cliquer dessus */
 }
+#snake-zone {
+  position: absolute;
+  top: 3rem;
+  left: 5rem;  
+  width: 95px;
+  height: 60px;
+  cursor: pointer;
+
+  /* DEBUG : VOIR LA ZONE */
+  background: transparent;
+}
