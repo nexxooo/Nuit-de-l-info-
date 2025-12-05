@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-
-=======
 // Liste des phases dans l'ordre
 const phases = ["intro", "step1", "level1", "level2", "level3"];
 let currentPhase = 0;
 
-// Sélectionne tous les boutons "next-phase"
-document.querySelectorAll(".next-phase").forEach(btn => {
+// Sélectionne tous les boutons "fleche-btn"
+document.querySelectorAll(".fleche-btn").forEach(btn => {
     btn.addEventListener("click", (e) => {
         e.preventDefault(); // Empêche le rechargement de la page
 
@@ -19,7 +16,9 @@ document.querySelectorAll(".next-phase").forEach(btn => {
         if (currentPhase < phases.length) {
             const next = phases[currentPhase];
             document.getElementById(next).style.display = "block";
+        } else {
+            // Si plus de phase, on peut afficher un message ou revenir au début
+            alert("Toutes les phases sont terminées !");
         }
     });
 });
->>>>>>> 35633bb (un commit)
