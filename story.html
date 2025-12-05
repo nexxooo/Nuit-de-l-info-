@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/story.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sixtyfour&display=swap" rel="stylesheet">    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/storyTransi.css" />
     <link rel="stylesheet" href="./css/storyDa.css" />
 
@@ -17,8 +22,7 @@
 
             <div class="dialogue">
                 <span class = "habitant">Narrateur :</span>
-                <!-- Remplir GAFAM-->
-                Bienvenue à PixeLand. GAFAM(Gargle A? F? A? MicroHard) rendent nos PC obsolètes pour nous forcer à consommer.
+                Bienvenue à PixeLand. GAFAM(Gargle Amazoni FaceId Apomme MicroHard) rendent nos PC obsolètes pour nous forcer à consommer.
                 <br>
                 Pour les vaincre, il ne suffit pas d'être un geek... Il faut être un Athlète du Numérique ! 
                 <br>
@@ -33,14 +37,33 @@
                     Mode Rapide (Direct au jeu)
                 </button>
             </div>
-
+        </div>
             <div id="intro">
                 <h2>Etape 1 : Profilage</h2>
                 <div class=""dialogue>
                     <span class="habitant">Coach NIRD :</span>
                     Avant de courir partout pour réparer 50 PC, je dois connaître ton profil d'athlète ! Réponds honnêtement.
                 </div>
-                <!--Faire le QCM-->
+                <div class="qcm">
+                    <div id="q1">
+                        Question 1 : À quelle fréquence pratiques-tu une activité physique ?
+                        <button>Jamais (Mode Canapé)</button>
+                        <button>1 à 2 fois par semaine (Mode Maintenance)</button>
+                        <button>Tous les jours (Mode Performance)</button>
+                    </div>
+                    <div id="q2">
+                        Question 2 : Quel est ton objectif principal ?
+                        <button>Gagner en force (Pour porter les vieux écrans cathodiques)</button>
+                        <button> Gagner en endurance (Pour coder toute la nuit)</button>
+                        <button> La souplesse (Pour passer sous les bureaux brancher les câbles)</button>
+                    </div>
+                    <div id="q2">
+                        Quelle est ta zone de faiblesse ?
+                        <button>Le dos</button>
+                        <button>1 à 2 fois par semaine (Mode Maintenance)</button>
+                        <button> Tous les jours (Mode Performance)</button>
+                    </div>
+                </div>
             </div>
 
             <div id="level1">
@@ -110,7 +133,7 @@
                     FÉLICITATIONS HÉROS ! Tu viens de créer le PixelPC V1 !
                 </div>
                 <div class="score-board">Score : <span id="score">0</span>/10</div>
-                <div id="trash">
+
                 <!--Faire le quizz-->
             </div>
 
@@ -138,11 +161,9 @@
 
                 </div>
                 <div class="score-board">Score : <span id="score">0</span>/10</div>
-                <div id="trash">
+
             </div>
 
-            
-        </div>
     </div>
 
 
