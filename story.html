@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>PixeLand vs GAFAM</title>
+  </head>
+
+  <body>
+    <div id="game">
+        <div id="intro">
+            <h1>Pixeland vs GAFAM</h1>
+
+            <div class="dialogue">
+                <span class = "habitant">Narrateur :</span>
+                <!-- Remplir GAFAM-->
+                Bienvenue à PixeLand. GAFAM(Gargle A? F? A? MicroHard) rendent nos PC obsolètes pour nous forcer à consommer.
+                <br>
+                Pour les vaincre, il ne suffit pas d'être un geek... Il faut être un Athlète du Numérique ! 
+                <br>
+                Êtes vous prêt physiquement pour la reconquête ?
+            </div>
+            <!-- Remplir Bouton-->
+            <div id="choix">
+                <button>
+                    Mode Histoire (+QCM)
+                </button>
+                <button>
+                    Mode Rapide (Direct au jeu)
+                </button>
+            </div>
+
+            <div id="intro">
+                <h2>Etape 1 : Profilage</h2>
+                <div class=""dialogue>
+                    <span class="habitant">Coach NIRD :</span>
+                    Avant de courir partout pour réparer 50 PC, je dois connaître ton profil d'athlète ! Réponds honnêtement.
+                </div>
+                <!--Faire le QCM-->
+            </div>
+
+            <div id="level1">
+                <h2>Etape 2 : Récupération</h2>
+                <div class="dialogue">
+                    <span class="habitant">Habitant :</span>
+                    Vite ! La décharge est pleine de composants utilisables. Clique pour en sauver le plus possible avant que le camion poubelle ne passe ! 
+                </div>
+                <div class="score-board">Composants : <span id="score">0</span>/10</div>
+                <div id="trash">
+                    ZONE DE DÉCHETS
+                </div>
+                <!--Fair le QCM-->
+            </div>
+
+            <div id="level2">
+                <h2>Etape 3 : Assemblage</h2>
+                <div class="dialogue">
+                    <span class="habitant">Coach :</span>
+                    Ok héros… assez ramassé de vieux trucs. Il est temps… de créer… L’ORDINATEUR ULTIME 3000.
+                </div>
+                <button>Start</button>
+                <div class="composant">
+                    <p id="motherboard">
+                        Carte Mère
+                        Description : C’est le cerveau central de l’ordinateur. 
+                    </p>
+                    <p id="cpu">
+                        Processeur
+                        Description : Il exécute toutes les instructions de ton ordinateur. Plus il est rapide, mieux c’est.
+                    </p>
+                    <p id="ram">
+                        Mémoire Vive
+                        Description : Plus tu as de RAM, plus l’ordi peut faire plusieurs choses en même temps.
+                    </p>
+                    <p id="stockage">
+                        Disque Dur
+                        Description : C’est là que sont stockés les fichiers, jeux, systèmes, photos…
+                    </p>
+                    <p id="gpu">
+                        Carte Graphique
+                        Description : Elle gère l’affichage et les jeux vidéo.
+                    </p>
+                    <p id="psu">
+                        Alimentation
+                        Description : Elle fournit de l’électricité à tous les composants.
+                    </p>
+                    <p id="sdr">
+                        Systeme de refroidissement
+                        Description : Refroidit le processeur pour éviter qu’il fonde comme du fromage au soleil.
+                    </p>
+                    <p id="case">
+                        Boîtier
+                        Description : La “maison” de l’ordinateur.
+                    </p>
+                    <p id="carteRe">
+                        Carte Réseaux
+                        Description : Permet de se connecter à Internet, soit en câble, soit en Wi-Fi.
+                    </p>
+                    <p id="carteSon">
+                        Carte Son
+                        Description : Gère l’audio : musique, micro, haut-parleurs.
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <span class="habitant">Coach :</span>
+                    FÉLICITATIONS HÉROS ! Tu viens de créer le PixelPC V1 !
+                </div>
+                <!--Faire le quizz-->
+            </div>
+
+            <div id="level3">
+                <h2>Etape 3 : Visualisation</h2>
+                <div class="dialogue">
+                    <span class="habitant">Habitant :</span>
+                    Wouaaah ! Un PC qui ne coûte pas un bras ! Tu es officiellement meilleur que GAFAM. Est ce qu'il s'allume ?
+                </div>
+                <div class="dialogue">
+                    <span class="character-name">Coach NIRD :</span>
+                    "L'attaque virale arrive via le réseau. Visualise la posture idéale pour tenir le coup face au stress !"
+                </div>
+                
+            </div>
+
+            
+        </div>
+    </div>
+
+
+
+    <script src="./js/index.js"></script>
+
+
+  </body>
+</html>
