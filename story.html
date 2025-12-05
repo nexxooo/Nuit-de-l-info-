@@ -1,146 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/storyTransi.css">
-<link rel="stylesheet" href="./css/storyDa.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sixtyfour&display=swap" rel="stylesheet">
-<title>PixeLand vs GAFAM</title>
-<style>
-    /* Masque toutes les étapes sauf intro */
-    #step1, #level1, #level2, #level3 { display: none; }
-</style>
-</head>
-<body>
-<div id="game">
-
-    <!-- INTRO -->
-    <div id="intro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/storyTransi.css" />
+    <link rel="stylesheet" href="./css/storyDa.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sixtyfour&display=swap"
+      rel="stylesheet"
+    />
+    <title>PixeLand vs GAFAM</title>
+    <style>
+      /* Masque toutes les étapes sauf intro */
+      #step1,
+      #level1,
+      #level2,
+      #level3 {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game">
+      <!-- INTRO -->
+      <div id="intro">
         <h1>Pixeland vs GAFAM</h1>
         <div class="dialogue">
-            <span class="habitant">Narrateur :</span>
-            Bienvenue à PixeLand. GAFAM(Gargle Amazoni FaceId Apomme MicroHard) rendent nos PC obsolètes pour nous forcer à consommer.
-            <br>
-            Pour les vaincre, il ne suffit pas d'être un geek... Il faut être un Athlète du Numérique ! 
-            <br>
-            Êtes vous prêt physiquement pour la reconquête ?
+          <span class="habitant">Narrateur :</span>
+          Bienvenue à PixeLand. GAFAM(Gargle Amazoni FaceId Apomme MicroHard)
+          rendent nos PC obsolètes pour nous forcer à consommer.
+          <br />
+          Pour les vaincre, il ne suffit pas d'être un geek... Il faut être un
+          Athlète du Numérique !
+          <br />
+          Êtes vous prêt physiquement pour la reconquête ?
         </div>
-        <button type="button" class="fleche-btn">Passer à la phase suivante ➜</button>
-    </div>
+        <button type="button" class="fleche-btn">
+          Passer à la phase suivante ➜
+        </button>
+      </div>
 
-    <!-- ETAPE 1 : PROFILAGE -->
-    <div id="step1">
+      <!-- ETAPE 1 : PROFILAGE -->
+      <div id="step1">
         <h2>Etape 1 : Profilage</h2>
         <div class="dialogue">
-            <span class="habitant">Coach NIRD :</span>
-            Avant de courir partout pour réparer 50 PC, je dois connaître ton profil d'athlète ! Réponds honnêtement.
+          <span class="habitant">Coach NIRD :</span>
+          Avant de courir partout pour réparer 50 PC, je dois connaître ton
+          profil d'athlète ! Réponds honnêtement.
         </div>
         <div class="qcm">
-            <p>Question 1 : À quelle fréquence pratiques-tu une activité physique ?</p>
+          <div class="q1">
+            <p>
+              Question 1 : À quelle fréquence pratiques-tu une activité physique
+              ?
+            </p>
             <button>Jamais (Mode Canapé)</button>
             <button>1 à 2 fois par semaine (Mode Maintenance)</button>
             <button>Tous les jours (Mode Performance)</button>
+          </div>
 
+          <div class="q1">
             <p>Question 2 : Quel est ton objectif principal ?</p>
-            <button>Gagner en force (Pour porter les vieux écrans cathodiques)</button>
+            <button>
+              Gagner en force (Pour porter les vieux écrans cathodiques)
+            </button>
             <button>Gagner en endurance (Pour coder toute la nuit)</button>
-            <button>La souplesse (Pour passer sous les bureaux brancher les câbles)</button>
-
+            <button>
+              La souplesse (Pour passer sous les bureaux brancher les câbles)
+            </button>
+          </div>
+          <div class="q1">
             <p>Question 3 : Quelle est ta zone de faiblesse ?</p>
             <button>Le dos</button>
             <button>Les poignets</button>
             <button>Les jambes</button>
+          </div>
         </div>
-        <button type="button" class="fleche-btn">Passer à la phase suivante ➜</button>
-    </div>
+        <button type="button" class="fleche-btn">
+          Passer à la phase suivante ➜
+        </button>
+      </div>
 
-    <!-- ETAPE 2 : RÉCUPÉRATION -->
-    <div id="level1">
+      <!-- ETAPE 2 : RÉCUPÉRATION -->
+      <div id="level1">
         <h2>Etape 2 : Récupération</h2>
         <div class="dialogue">
-            <span class="habitant">Habitant :</span>
-            Vite ! La décharge est pleine de composants utilisables. Clique pour en sauver le plus possible avant que le camion poubelle ne passe ! 
+          <span class="habitant">Habitant :</span>
+          Vite ! La décharge est pleine de composants utilisables. Clique pour
+          en sauver le plus possible avant que le camion poubelle ne passe !
         </div>
         <div class="score-board">Score : <span id="score1">0</span>/10</div>
         <div id="trash">ZONE DE DÉCHETS</div>
         <div class="qcm">
-            <p>Question 1 : Quand tu dois courir chercher un composant tombé au fond de la décharge, tu…</p>
+          <div class="q2">
+            <p>
+              Question 1 : Quand tu dois courir chercher un composant tombé au
+              fond de la décharge, tu…
+            </p>
             <button>Marche tranquillement (Mode Exploration)</button>
             <button>Fais un petit sprint (Mode Réaction)</button>
             <button>Bondis comme un hacker sous caféine (Mode Turbo)</button>
-
+          </div>
+          <div class="q2">
             <p>Question 2 : Quel est ton objectif principal ?</p>
-            <button>Gagner en force (Pour porter les vieux écrans cathodiques)</button>
+            <button>
+              Gagner en force (Pour porter les vieux écrans cathodiques)
+            </button>
             <button>Gagner en endurance (Pour coder toute la nuit)</button>
             <button>Bondis comme un hacker sous caféine (Mode Turbo)</button>
-
-            <p>Question 3 : Lors d’une longue session de montage PC, ton niveau d’endurance est…</p>
+          </div>
+          <div class="q2">
+            <p>
+              Question 3 : Lors d’une longue session de montage PC, ton niveau
+              d’endurance est…
+            </p>
             <button>Limité : je fais une pause toutes les 5 minutes.</button>
             <button>Correct : je tiens une bonne heure.</button>
             <button>Surhumain : je peux câbler toute la nuit.</button>
+          </div>
         </div>
-        <button type="button" class="fleche-btn">Passer à la phase suivante ➜</button>
-    </div>
+        <button type="button" class="fleche-btn">
+          Passer à la phase suivante ➜
+        </button>
+      </div>
 
-    <!-- ETAPE 3 : ASSEMBLAGE -->
-    <div id="level2">
+      <!-- ETAPE 3 : ASSEMBLAGE -->
+      <div id="level2">
         <h2>Etape 3 : Assemblage</h2>
         <div class="dialogue">
-            <span class="habitant">Coach :</span>
-            Ok héros… assez ramassé de vieux trucs. Il est temps… de créer… L’ORDINATEUR ULTIME 3000.
+          <span class="habitant">Coach :</span>
+          Ok héros… assez ramassé de vieux trucs. Il est temps… de créer…
+          L’ORDINATEUR ULTIME 3000.
         </div>
         <button type="button">Start</button>
         <div class="composant">
-            <p>Carte Mère : C’est le cerveau central de l’ordinateur.</p>
-            <p>Processeur : Il exécute toutes les instructions de ton ordinateur.</p>
-            <p>Mémoire Vive : Plus tu as de RAM, plus l’ordi peut faire plusieurs choses en même temps.</p>
-            <p>Disque Dur : C’est là que sont stockés les fichiers, jeux, systèmes, photos…</p>
-            <p>Carte Graphique : Elle gère l’affichage et les jeux vidéo.</p>
-            <p>Alimentation : Elle fournit de l’électricité à tous les composants.</p>
-            <p>Système de refroidissement : Refroidit le processeur pour éviter qu’il fonde.</p>
-            <p>Boîtier : La “maison” de l’ordinateur.</p>
-            <p>Carte Réseaux : Permet de se connecter à Internet.</p>
-            <p>Carte Son : Gère l’audio.</p>
+          <p>Carte Mère : C’est le cerveau central de l’ordinateur.</p>
+          <p>
+            Processeur : Il exécute toutes les instructions de ton ordinateur.
+          </p>
+          <p>
+            Mémoire Vive : Plus tu as de RAM, plus l’ordi peut faire plusieurs
+            choses en même temps.
+          </p>
+          <p>
+            Disque Dur : C’est là que sont stockés les fichiers, jeux, systèmes,
+            photos…
+          </p>
+          <p>Carte Graphique : Elle gère l’affichage et les jeux vidéo.</p>
+          <p>
+            Alimentation : Elle fournit de l’électricité à tous les composants.
+          </p>
+          <p>
+            Système de refroidissement : Refroidit le processeur pour éviter
+            qu’il fonde.
+          </p>
+          <p>Boîtier : La “maison” de l’ordinateur.</p>
+          <p>Carte Réseaux : Permet de se connecter à Internet.</p>
+          <p>Carte Son : Gère l’audio.</p>
         </div>
         <div class="dialogue">
-            <span class="habitant">Coach :</span>
-            FÉLICITATIONS HÉROS ! Tu viens de créer le PixelPC V1 !
+          <span class="habitant">Coach :</span>
+          FÉLICITATIONS HÉROS ! Tu viens de créer le PixelPC V1 !
         </div>
         <div class="score-board">Score : <span id="score2">0</span>/10</div>
-        <button type="button" class="fleche-btn">Passer à la phase suivante ➜</button>
-    </div>
+        <button type="button" class="fleche-btn">
+          Passer à la phase suivante ➜
+        </button>
+      </div>
 
-    <!-- ETAPE 4 : VISUALISATION -->
-    <div id="level3">
+      <!-- ETAPE 4 : VISUALISATION -->
+      <div id="level3">
         <h2>Etape 4 : Visualisation</h2>
         <div class="dialogue">
-            <span class="habitant">Habitant :</span>
-            Wouaaah ! Un PC qui ne coûte pas un bras ! Tu es officiellement meilleur que GAFAM. Est ce qu'il s'allume ?
+          <span class="habitant">Habitant :</span>
+          Wouaaah ! Un PC qui ne coûte pas un bras ! Tu es officiellement
+          meilleur que GAFAM. Est ce qu'il s'allume ?
         </div>
         <div class="dialogue">
-            <span class="habitant">Coach NIRD :</span>
-            "L'attaque virale arrive via le réseau. Visualise la posture idéale pour tenir le coup face au stress !"
+          <span class="habitant">Coach NIRD :</span>
+          "L'attaque virale arrive via le réseau. Visualise la posture idéale
+          pour tenir le coup face au stress !"
         </div>
         <div class="dialogue">
-            <span class="systeme">Système de Sécurité :</span>
-            ALERTE ! Publicités BigTechos détectées ! Cliquez dessus pour les fermer avant saturation !
+          <span class="systeme">Système de Sécurité :</span>
+          ALERTE ! Publicités BigTechos détectées ! Cliquez dessus pour les
+          fermer avant saturation !
         </div>
         <div class="dialogue">
-            <span class="systeme">Système de Sécurité :</span>
-            ALERTE CRITIQUE ÉVITÉE !
+          <span class="systeme">Système de Sécurité :</span>
+          ALERTE CRITIQUE ÉVITÉE !
         </div>
         <div class="dialogue">
-            <span class="habitant">Coach :</span>
-            Bravo tu as réussi ! Mais tu pourrais être plus fort, regarde les liens.
+          <span class="habitant">Coach :</span>
+          Bravo tu as réussi ! Mais tu pourrais être plus fort, regarde les
+          liens.
         </div>
         <div class="score-board">Score : <span id="score3">0</span>/10</div>
+      </div>
     </div>
 
-</div>
-
-<script src="./js/index.js"></script>
-</body>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
